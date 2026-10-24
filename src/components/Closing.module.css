@@ -1,0 +1,94 @@
+.closing {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 88px);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 120px) var(--gutter) clamp(72px, 10vw, 140px);
+}
+
+.sheet {
+  padding: 10px;
+  border-radius: 22px;
+  background: var(--vinyl);
+  box-shadow: var(--lift-high);
+  transform: rotate(-3deg);
+}
+
+.sheet img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  background: var(--grip-edge);
+}
+
+.copy {
+  display: grid;
+  justify-items: start;
+  gap: 24px;
+}
+
+.copy p {
+  max-width: 46ch;
+  color: var(--on-grip-muted);
+  font-size: 1.125rem;
+}
+
+.title {
+  font-size: clamp(3.25rem, 7vw, 5.75rem);
+}
+
+.cta {
+  min-height: 56px;
+  padding: 14px 28px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--vinyl);
+  color: var(--ink);
+  box-shadow: var(--lift);
+  font-family: var(--font-display);
+  font-stretch: 75%;
+  word-spacing: 0.14em;
+  font-weight: 850;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  transform: rotate(-1.5deg);
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta:hover {
+    transform: rotate(0deg) translateY(-2px);
+  }
+}
+
+.cta:active {
+  transform: scale(0.97);
+  transition-duration: var(--dur-press);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 28px var(--gutter) 120px;
+  border-top: 1px solid var(--grip-edge);
+  color: var(--on-grip-muted);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 760px) {
+  .closing {
+    grid-template-columns: 1fr;
+  }
+
+  .sheet {
+    max-width: 380px;
+    width: calc(100% - 16px);
+  }
+}

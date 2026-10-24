@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T00:00:00Z",
+  "title": "Design System: LIJA",
+  "extensions": {
+    "colorMeta": {
+      "grip": { "role": "neutral", "displayName": "Grip Black", "canonical": "#0b0b0c", "tonalRamp": ["oklch(15% 0.003 285)", "oklch(21% 0.005 285)", "oklch(27% 0.008 285)", "oklch(40% 0.008 285)", "oklch(55% 0.006 285)", "oklch(70% 0.005 285)", "oklch(85% 0.004 285)", "oklch(95% 0.003 285)"] },
+      "grip-raised": { "role": "neutral", "displayName": "Grip Raised", "canonical": "#17171a" },
+      "grip-edge": { "role": "neutral", "displayName": "Grip Edge", "canonical": "#2a2a2f" },
+      "on-grip": { "role": "neutral", "displayName": "Chalk", "canonical": "#f2f1ec" },
+      "on-grip-muted": { "role": "neutral", "displayName": "Worn Chalk", "canonical": "#a8a7a2" },
+      "vinyl": { "role": "primary", "displayName": "Vinyl White", "canonical": "#f4f3ee", "tonalRamp": ["oklch(15% 0.006 100)", "oklch(27% 0.008 100)", "oklch(40% 0.009 100)", "oklch(52% 0.010 100)", "oklch(65% 0.010 100)", "oklch(78% 0.010 100)", "oklch(90% 0.010 100)", "oklch(96% 0.008 100)"] },
+      "vinyl-shade": { "role": "primary", "displayName": "Vinyl Shade", "canonical": "#e3e1d9" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0b0b0c" },
+      "ink-muted": { "role": "neutral", "displayName": "Faded Ink", "canonical": "#4a4945" },
+      "intent-cambio": { "role": "secondary", "displayName": "Acid Yellow (Cambio en oferta)", "canonical": "#f3e03b", "tonalRamp": ["oklch(25% 0.05 104)", "oklch(35% 0.08 104)", "oklch(48% 0.11 104)", "oklch(60% 0.13 104)", "oklch(72% 0.15 104)", "oklch(82% 0.16 104)", "oklch(89% 0.17 104)", "oklch(96% 0.07 104)"] },
+      "intent-retraso": { "role": "secondary", "displayName": "Safety Orange (Entrega retrasada)", "canonical": "#ff6b1f", "tonalRamp": ["oklch(22% 0.07 45)", "oklch(32% 0.11 45)", "oklch(44% 0.15 45)", "oklch(56% 0.18 45)", "oklch(70% 0.20 45)", "oklch(78% 0.15 45)", "oklch(87% 0.09 45)", "oklch(95% 0.04 45)"] },
+      "intent-falla": { "role": "secondary", "displayName": "Bubblegum Pink (Producto con falla)", "canonical": "#ff62a5", "tonalRamp": ["oklch(22% 0.07 355)", "oklch(32% 0.11 355)", "oklch(44% 0.15 355)", "oklch(56% 0.19 355)", "oklch(70% 0.21 355)", "oklch(78% 0.15 355)", "oklch(87% 0.09 355)", "oklch(95% 0.04 355)"] },
+      "intent-factura": { "role": "secondary", "displayName": "Cobalt Blue (Factura a empresa)", "canonical": "#2f5bff", "tonalRamp": ["oklch(18% 0.08 265)", "oklch(28% 0.13 265)", "oklch(40% 0.19 265)", "oklch(55% 0.24 265)", "oklch(65% 0.19 265)", "oklch(75% 0.13 265)", "oklch(86% 0.07 265)", "oklch(95% 0.03 265)"] },
+      "on-intent-factura": { "role": "secondary", "displayName": "White on Cobalt", "canonical": "#ffffff" },
+      "danger": { "role": "neutral", "displayName": "Coral Alert", "canonical": "#ff8a7a" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero drop title only; Archivo wdth 62 / 900 uppercase, second line hollow with a 2px Chalk stroke." },
+      "headline": { "displayName": "Headline", "purpose": "Section, closing and chat-header titles; compressed 900 uppercase, balanced." },
+      "title": { "displayName": "Title", "purpose": "Product names, nav, buttons, sticker labels; Archivo wdth 75 / 750-850 uppercase with word-spacing 0.14em." },
+      "body": { "displayName": "Body", "purpose": "Running text in Archivo at normal width, sentence case." },
+      "lede": { "displayName": "Lede", "purpose": "Section intros in Worn Chalk, 44-48ch." },
+      "label": { "displayName": "Label", "purpose": "Legends, captions, status, demo bar." },
+      "mono": { "displayName": "Receipt Mono", "purpose": "Prices, case IDs, order numbers, RUC, percentages only." }
+    },
+    "shadows": [
+      { "name": "die-cut", "value": "0 0 0 3px var(--vinyl)", "purpose": "White cut edge around colored stickers and price tags (4px on bumpers and badge, 2px on mini chips)." },
+      { "name": "lift", "value": "0 1px 1px rgb(0 0 0 / 0.35), 0 8px 18px -6px rgb(0 0 0 / 0.6)", "purpose": "Resting stickers, sheets, logo, bot messages." },
+      { "name": "lift-high", "value": "0 2px 2px rgb(0 0 0 / 0.35), 0 18px 34px -10px rgb(0 0 0 / 0.7)", "purpose": "Buy module, launcher, closing sheet, hovered bumpers, first frame of the slap." },
+      { "name": "panel", "value": "0 2px 4px rgb(0 0 0 / 0.4), 0 30px 60px -20px rgb(0 0 0 / 0.85)", "purpose": "Chat panel only." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Default curve for every UI transition." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "Looping indicators (typing dots)." },
+      { "name": "dur-press", "value": "120ms", "purpose": "Press squash (scale 0.94-0.97)." },
+      { "name": "dur-ui", "value": "200ms", "purpose": "Color, opacity and hover tilt changes." },
+      { "name": "dur-panel", "value": "260ms", "purpose": "Chat panel, drop-wall hover, bumper hover, peel growth, tracker rise." },
+      { "name": "slap", "value": "460ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Signature only: intent sticker slapped onto the case header (translateY -14px, scale 1.35, +9deg extra tilt to rest)." }
+    ],
+    "breakpoints": [
+      { "name": "chat-fullscreen", "value": "560px" },
+      { "name": "nav-hidden", "value": "640px" },
+      { "name": "closing-stack", "value": "760px" },
+      { "name": "hero-stack", "value": "860px" },
+      { "name": "wall-two-up", "value": "900px" },
+      { "name": "bumper-stack", "value": "960px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Intent Sticker",
+      "kind": "chip",
+      "refersTo": "intent-sticker",
+      "description": "Signature unit of the palette law: one hue per post-sale category, die-cut and tilted.",
+      "html": "<span class=\"ds-sticker\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 9h13l-3-3M20 15H7l3 3\"/></svg>Cambio en oferta</span>",
+      "css": ".ds-sticker { display: inline-flex; align-items: center; gap: 0.4em; padding: 0.35em 0.75em 0.35em 0.6em; border-radius: 14px; background: #f3e03b; color: #0b0b0c; box-shadow: 0 0 0 3px #f4f3ee, 0 1px 1px rgb(0 0 0 / 0.35), 0 8px 18px -6px rgb(0 0 0 / 0.6); font-family: 'Archivo Variable', 'Archivo', sans-serif; font-stretch: 75%; word-spacing: 0.14em; font-weight: 850; font-size: 1rem; line-height: 1.1; text-transform: uppercase; letter-spacing: 0.01em; white-space: nowrap; transform: rotate(-2deg); transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-sticker svg { width: 1.05em; height: 1.05em; flex: none; } .ds-sticker:hover { transform: translateY(-3px) rotate(1deg); }"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Add-to-cart on the vinyl buy module.",
+      "html": "<button class=\"ds-btn-ink\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"/></svg>Agregar al carrito</button>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 28px; border: 0; border-radius: 14px; background: #0b0b0c; color: #f4f3ee; font-family: 'Archivo Variable', 'Archivo', sans-serif; font-stretch: 75%; word-spacing: 0.14em; font-weight: 850; font-size: 1.125rem; text-transform: uppercase; cursor: pointer; transition: transform 120ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-btn-ink svg { width: 20px; height: 20px; } .ds-btn-ink:active { transform: scale(0.97); } .ds-btn-ink:focus-visible { outline: 3px solid #0b0b0c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Vinyl Button",
+      "kind": "button",
+      "refersTo": "button-vinyl",
+      "description": "White sticker CTA on the grip ground; straightens on hover.",
+      "html": "<button class=\"ds-btn-vinyl\">Abrir el chat</button>",
+      "css": ".ds-btn-vinyl { min-height: 56px; padding: 14px 28px; border: 0; border-radius: 16px; background: #f4f3ee; color: #0b0b0c; box-shadow: 0 1px 1px rgb(0 0 0 / 0.35), 0 8px 18px -6px rgb(0 0 0 / 0.6); font-family: 'Archivo Variable', 'Archivo', sans-serif; font-stretch: 75%; word-spacing: 0.14em; font-weight: 850; font-size: 1.25rem; text-transform: uppercase; transform: rotate(-1.5deg); cursor: pointer; transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-btn-vinyl:hover { transform: rotate(0deg) translateY(-2px); } .ds-btn-vinyl:active { transform: scale(0.97); transition-duration: 120ms; } .ds-btn-vinyl:focus-visible { outline: 3px solid #f4f3ee; outline-offset: 3px; }"
+    },
+    {
+      "name": "Reply Chips",
+      "kind": "chip",
+      "refersTo": "chip-reply",
+      "description": "Quick replies in the chat: neutral, intent-filled, and primary.",
+      "html": "<div class=\"ds-replies\"><button class=\"ds-reply\">Otra cosa</button><button class=\"ds-reply ds-reply-intent\">Producto con falla</button><button class=\"ds-reply ds-reply-primary\">Enviar caso</button></div>",
+      "css": ".ds-replies { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; background: #17171a; } .ds-reply { min-height: 40px; padding: 8px 14px; border: 1.5px solid #2a2a2f; border-radius: 999px; background: #0b0b0c; color: #f2f1ec; font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: transform 120ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-reply:hover { border-color: #a8a7a2; } .ds-reply-intent { border-color: transparent; background: #ff62a5; color: #0b0b0c; box-shadow: 0 0 0 2px #f4f3ee; } .ds-reply-primary { border-color: transparent; background: #f4f3ee; color: #0b0b0c; } .ds-reply-intent:hover, .ds-reply-primary:hover { transform: rotate(-2deg); } .ds-reply:active { transform: scale(0.97); } .ds-reply:focus-visible { outline: 3px solid #f4f3ee; outline-offset: 3px; }"
+    },
+    {
+      "name": "Composer Field",
+      "kind": "input",
+      "refersTo": "input-composer",
+      "description": "Chat text field with vinyl send button.",
+      "html": "<div class=\"ds-composer\"><textarea class=\"ds-input\" rows=\"1\" placeholder=\"Escribe tu consulta...\"></textarea><button class=\"ds-send\" aria-label=\"Enviar\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 19V5M5 12l7-7 7 7\"/></svg></button></div>",
+      "css": ".ds-composer { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 8px; padding: 12px 16px; background: #17171a; } .ds-input { width: 100%; min-height: 48px; padding: 12px 14px; border: 1.5px solid #2a2a2f; border-radius: 14px; background: #0b0b0c; color: #f2f1ec; font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; font-size: 1rem; line-height: 1.4; resize: none; transition: border-color 200ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-input::placeholder { color: #a8a7a2; } .ds-input:focus-visible { outline: none; border-color: #f4f3ee; } .ds-input[aria-invalid='true'] { border-color: #ff8a7a; } .ds-send { display: grid; place-items: center; width: 48px; height: 48px; border: 0; border-radius: 14px; background: #f4f3ee; color: #0b0b0c; cursor: pointer; transition: transform 120ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-send svg { width: 22px; height: 22px; } .ds-send:active { transform: scale(0.94); } .ds-send:disabled { opacity: 0.35; cursor: not-allowed; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Header with tilted vinyl logo sticker, compressed nav, cart pill.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-logo\" href=\"#\">LIJA</a><nav><ul class=\"ds-nav\"><li><a href=\"#\">Drop 07</a></li><li><a href=\"#\">Hoodies</a></li><li><a href=\"#\">Ayuda</a></li></ul></nav><a class=\"ds-cart\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\"><path d=\"M6 7h12l-1 13H7L6 7zM9 7a3 3 0 0 1 6 0\"/></svg>0</a></header>",
+      "css": ".ds-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 24px; background: #0b0b0c; color: #f2f1ec; } .ds-logo { display: inline-block; padding: 2px 14px 0; border-radius: 10px; background: #f4f3ee; color: #0b0b0c; box-shadow: 0 1px 1px rgb(0 0 0 / 0.35), 0 8px 18px -6px rgb(0 0 0 / 0.6); font-family: 'Archivo Variable', 'Archivo', sans-serif; font-stretch: 62%; font-weight: 900; font-size: 2.25rem; line-height: 1.05; letter-spacing: 0.02em; text-decoration: none; transform: rotate(-3deg); transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-logo:hover { transform: rotate(-1deg) scale(1.03); } .ds-nav { display: flex; gap: 28px; margin: 0; padding: 0; list-style: none; font-family: 'Archivo Variable', 'Archivo', sans-serif; font-stretch: 75%; word-spacing: 0.14em; font-weight: 750; font-size: 1.0625rem; text-transform: uppercase; } .ds-nav a { color: #a8a7a2; text-decoration: none; transition: color 200ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-nav a:hover { color: #f2f1ec; } .ds-cart { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 14px; border: 1.5px solid #2a2a2f; border-radius: 999px; color: #f2f1ec; text-decoration: none; font-size: 0.875rem; } .ds-cart svg { width: 20px; height: 20px; } .ds-header a:focus-visible { outline: 3px solid #f4f3ee; outline-offset: 3px; }"
+    },
+    {
+      "name": "Photo Sheet with Price Tag",
+      "kind": "card",
+      "refersTo": "photo-sheet",
+      "description": "Drop-wall item: tilted vinyl photo sheet with an ink price tag slapped over its lower edge.",
+      "html": "<div class=\"ds-item\"><div class=\"ds-sheet\"><div class=\"ds-photo\"></div></div><div class=\"ds-tag\"><div><div class=\"ds-tag-name\">HOODIE CALLEJÓN</div><div class=\"ds-tag-detail\">Verde musgo · capucha doble</div></div><span class=\"ds-mono\">S/ 129</span><button class=\"ds-add\" aria-label=\"Agregar\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"/></svg></button></div></div>",
+      "css": ".ds-item { --tilt: 1.5deg; max-width: 360px; padding: 24px; background: #0b0b0c; transform: rotate(var(--tilt)); transition: transform 260ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-item:hover { transform: rotate(0deg) translateY(-4px); } .ds-sheet { padding: 8px; border-radius: 18px; background: #f4f3ee; box-shadow: 0 1px 1px rgb(0 0 0 / 0.35), 0 8px 18px -6px rgb(0 0 0 / 0.6); } .ds-photo { aspect-ratio: 4 / 3; border-radius: 12px; background: #2a2a2f; } .ds-tag { position: relative; display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 12px; width: calc(100% - 28px); margin: -34px auto 0; padding: 12px 12px 12px 16px; border-radius: 14px; background: #0b0b0c; color: #f4f3ee; box-shadow: 0 0 0 3px #f4f3ee, 0 1px 1px rgb(0 0 0 / 0.35), 0 8px 18px -6px rgb(0 0 0 / 0.6); transform: rotate(calc(var(--tilt) * -1.4)); font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; } .ds-tag-name { font-stretch: 75%; word-spacing: 0.14em; font-weight: 850; font-size: 1.25rem; line-height: 1.05; } .ds-tag-detail { margin-top: 2px; color: #a8a7a2; font-size: 0.8125rem; } .ds-mono { font-family: 'Martian Mono Variable', ui-monospace, monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; font-weight: 700; font-size: 0.9375rem; white-space: nowrap; } .ds-add { display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 12px; background: #f4f3ee; color: #0b0b0c; cursor: pointer; transition: transform 120ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-add svg { width: 20px; height: 20px; } .ds-add:active { transform: scale(0.94); }"
+    },
+    {
+      "name": "Bumper Strip",
+      "kind": "custom",
+      "description": "Full-width intent bumper sticker linking a category to the chat.",
+      "html": "<button class=\"ds-bumper\"><span class=\"ds-bumper-label\">Entrega retrasada</span><span class=\"ds-bumper-q\">“¿Cómo gestiono una entrega retrasada?”</span><span class=\"ds-bumper-cta\">Preguntar</span></button>",
+      "css": ".ds-bumper { display: grid; grid-template-columns: minmax(160px, 1fr) minmax(0, 1.4fr) auto; align-items: center; gap: 16px 24px; width: 100%; padding: 22px 24px 22px 28px; border: 0; border-radius: 20px; background: #ff6b1f; color: #0b0b0c; box-shadow: 0 0 0 4px #f4f3ee, 0 1px 1px rgb(0 0 0 / 0.35), 0 8px 18px -6px rgb(0 0 0 / 0.6); text-align: left; cursor: pointer; transform: rotate(-0.6deg); transition: transform 260ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 260ms cubic-bezier(0.23, 1, 0.32, 1); font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; } .ds-bumper:hover { transform: rotate(0.6deg) scale(1.01); box-shadow: 0 0 0 4px #f4f3ee, 0 2px 2px rgb(0 0 0 / 0.35), 0 18px 34px -10px rgb(0 0 0 / 0.7); } .ds-bumper:active { transform: scale(0.985); transition-duration: 120ms; } .ds-bumper-label { font-stretch: 62%; word-spacing: 0.14em; font-weight: 900; font-size: 2.25rem; line-height: 0.95; text-transform: uppercase; } .ds-bumper-q { font-size: 1rem; font-weight: 550; line-height: 1.4; } .ds-bumper-cta { padding: 10px 14px; border-radius: 999px; background: #0b0b0c; color: #f4f3ee; font-weight: 700; font-size: 0.875rem; white-space: nowrap; }"
+    },
+    {
+      "name": "Case Tracker Slots",
+      "kind": "custom",
+      "description": "Ghost-sticker slots for case fields; dashed when empty, intent-filled when captured.",
+      "html": "<ul class=\"ds-slots\"><li class=\"ds-slot ds-filled\"></li><li class=\"ds-slot ds-filled\"></li><li class=\"ds-slot\"></li><li class=\"ds-slot\"></li></ul>",
+      "css": ".ds-slots { display: flex; gap: 5px; margin: 0; padding: 16px; list-style: none; background: #17171a; } .ds-slot { width: 14px; height: 18px; border: 1.5px dashed #a8a7a2; border-radius: 4px; opacity: 0.85; transition: background-color 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-filled { border: 2px solid #f4f3ee; background: #ff6b1f; opacity: 1; transform: rotate(-4deg); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Stickered Deck",
+    "overview": "The whole page is a skateboard deck wrapped in grip tape: a near-black, grained ground that never competes. Everything the visitor should touch or read as a thing (the logo, the buy module, every photo, every price, every help category) is a die-cut vinyl sticker slapped on top of it, with a white cut edge, a soft peel shadow and a slight tilt. Depth comes from stickers lifting off the tape, not from cards stacked in a grid.\n\nColor is not decoration. The ground and the stickers are neutral (grip black, vinyl off-white); the only saturated colors in the system belong to the four post-sale intents, and each hue means exactly one category everywhere it appears: hero stickers, bumper strips, chat replies, the case tracker and the receipt. Type is loud and compressed for anything that is shouted (headlines, labels, buttons) and plain Archivo for anything that is read.\n\nDensity is loose on the store and tight in the chat. Motion is short and decisive: strong ease-out exits, presses that squash to 0.94-0.97, and one signature move, the intent sticker being slapped onto the case header.",
+    "keyCharacteristics": [
+      "Grain-textured grip-black ground (SVG fractal noise at 6% white, 160px tile) on page and chat panel.",
+      "Vinyl off-white stickers with a white die-cut ring and soft two-layer lift shadow.",
+      "Tilts: large sheets between -3deg and +2.5deg; small marks up to -12deg.",
+      "Four intent hues, one category each, never decorative.",
+      "Archivo compressed (wdth 62-75, weight 750-900, uppercase) for display; Archivo normal for text; Martian Mono only for prices, case codes and figures.",
+      "Rounded everything; no sharp corners outside the full-screen mobile chat."
+    ],
+    "rules": [
+      { "name": "The Palette Law", "body": "Each intent hue belongs to one post-sale category and nothing else. If an element is not about that category, it does not wear its color; no intent hue on links, headings, CTAs, or ornaments.", "section": "colors" },
+      { "name": "The Two Neutrals Rule", "body": "Every non-intent surface is either grip (ground) or vinyl (sticker). A third surface tone needs a reason in the material.", "section": "colors" },
+      { "name": "The Shout and Read Rule", "body": "Compressed uppercase is for things that are shouted or pressed; anything a person reads as a sentence is Archivo at normal width, sentence case.", "section": "typography" },
+      { "name": "The Receipt Rule", "body": "Martian Mono appears only on codes and money: prices, case and order numbers, RUC, percentages. Never on headings, labels or prose.", "section": "typography" },
+      { "name": "The Peel Rule", "body": "Lift is expressed by shadow depth and tilt changing together: on hover a sticker straightens toward 0deg and rises 2-4px, on press it squashes to 0.94-0.97.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do lay every touchable or priced thing on a Vinyl or Ink sticker over the grained grip ground.",
+      "Do route intent color through `data-intent` so components read `--intent` / `--on-intent` and the palette law holds by construction.",
+      "Do pair Archivo compressed (wdth 62-75, 750-900, uppercase, word-spacing 0.14em) for shouted text with normal-width Archivo for sentences.",
+      "Do set prices, case IDs, order numbers and RUC in Martian Mono with tabular numerals.",
+      "Do keep large sheets within -3deg to +2.5deg and let only small marks (badges, slots, mini chips) tilt further.",
+      "Do animate with `--ease-out` (cubic-bezier(0.23, 1, 0.32, 1)) at 120ms presses, 200ms UI and 260ms panels, and honor reduced motion.",
+      "Do show empty data as dashed ghost stickers that fill with the intent color."
+    ],
+    "donts": [
+      "Don't use an intent hue for anything that is not its category: no yellow highlights, no blue links, no pink accents.",
+      "Don't lay a uniform grid of identical product cards; the drop wall varies span, aspect and tilt.",
+      "Don't use hard offset shadows or colored glows; depth is the soft peel shadow plus the die-cut ring.",
+      "Don't use sharp corners or pure white surfaces; vinyl is off-white and every edge is rounded.",
+      "Don't set Martian Mono on headings, labels or body copy.",
+      "Don't use ease-in curves on UI motion."
+    ]
+  }
+}

@@ -1,0 +1,205 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-areas:
+    'copy photo'
+    'help photo';
+  column-gap: clamp(24px, 5vw, 72px);
+  row-gap: 40px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 48px) var(--gutter) clamp(56px, 8vw, 96px);
+}
+
+.copy {
+  grid-area: copy;
+  display: grid;
+  align-content: start;
+  gap: 28px;
+}
+
+.title {
+  font-size: clamp(4rem, 10vw, 6rem);
+  line-height: 0.86;
+}
+
+.title span {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--on-grip);
+}
+
+.lede {
+  max-width: 44ch;
+  color: var(--on-grip-muted);
+  font-size: 1.125rem;
+}
+
+@property --peel {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 48px;
+}
+
+.seeDrop {
+  justify-self: start;
+  margin-top: -8px;
+  font-family: var(--font-display);
+  font-stretch: 75%;
+  word-spacing: 0.14em;
+  font-weight: 800;
+  font-size: 1.0625rem;
+  text-transform: uppercase;
+}
+
+.photo {
+  --peel: 48px;
+  grid-area: photo;
+  position: relative;
+  align-self: start;
+  margin: 8px 0 0;
+  filter: drop-shadow(0 2px 2px rgb(0 0 0 / 0.35)) drop-shadow(0 22px 26px rgb(0 0 0 / 0.55));
+  transform: rotate(2.5deg);
+  transition: --peel var(--dur-panel) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .photo:hover {
+    --peel: 72px;
+  }
+}
+
+/* La hoja de vinilo con la esquina inferior derecha levantada */
+.sheet {
+  padding: 10px;
+  border-radius: 22px;
+  background: var(--vinyl);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--peel)),
+    calc(100% - var(--peel)) 100%,
+    0 100%
+  );
+}
+
+.sheet img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  background: var(--grip-edge);
+}
+
+/* El reverso del sticker doblado sobre sí mismo */
+.flap {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: var(--peel);
+  height: var(--peel);
+  background: linear-gradient(135deg, #fbfaf6 0%, #d9d6cc 55%, #bdb9ad 100%);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  border-top-left-radius: 6px;
+}
+
+.weight {
+  position: absolute;
+  top: -22px;
+  left: -26px;
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--vinyl);
+  box-shadow:
+    0 0 0 4px var(--vinyl),
+    var(--lift);
+  font-family: var(--font-display);
+  font-stretch: 62%;
+  word-spacing: 0.14em;
+  font-weight: 900;
+  font-size: 2.75rem;
+  line-height: 1;
+  transform: rotate(-12deg);
+}
+
+.weight small {
+  font-size: 1.125rem;
+}
+
+.weightInner {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1px;
+}
+
+.help {
+  grid-area: help;
+  align-self: end;
+  display: grid;
+  gap: 18px;
+}
+
+.helpLead {
+  font-family: var(--font-display);
+  font-stretch: 75%;
+  word-spacing: 0.14em;
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.helpList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.helpButton {
+  padding: 6px;
+  border: 0;
+  background: none;
+  border-radius: 16px;
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .helpButton:hover {
+    transform: translateY(-3px) rotate(1deg);
+  }
+}
+
+.helpButton:active {
+  transform: scale(0.96);
+  transition-duration: var(--dur-press);
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'copy'
+      'photo'
+      'help';
+  }
+
+  .photo {
+    max-width: 520px;
+    margin: 16px auto 0;
+    width: calc(100% - 24px);
+  }
+
+  .weight {
+    width: 84px;
+    height: 84px;
+    font-size: 2.25rem;
+    left: -14px;
+  }
+}

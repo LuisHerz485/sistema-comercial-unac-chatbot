@@ -1,0 +1,161 @@
+.section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 112px) var(--gutter);
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: end;
+  gap: 24px clamp(24px, 5vw, 72px);
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.intro p {
+  max-width: 48ch;
+  color: var(--on-grip-muted);
+  font-size: 1.125rem;
+}
+
+.title {
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+}
+
+.title span {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--on-grip);
+}
+
+.list {
+  display: grid;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list > li {
+  --tilt: 0deg;
+  transform: rotate(var(--tilt));
+}
+
+/* Calcomanía de parachoques: una franja de vinilo de lado a lado */
+.bumper {
+  display: grid;
+  grid-template-columns: minmax(200px, 1.1fr) minmax(0, 1.6fr) minmax(150px, 0.9fr) auto;
+  align-items: center;
+  gap: 16px 28px;
+  width: 100%;
+  padding: 22px 24px 22px 28px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--intent);
+  color: var(--on-intent);
+  box-shadow:
+    0 0 0 4px var(--vinyl),
+    var(--lift);
+  text-align: left;
+  transition:
+    transform var(--dur-panel) var(--ease-out),
+    box-shadow var(--dur-panel) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .bumper:hover {
+    transform: rotate(calc(var(--tilt) * -1)) scale(1.01);
+    box-shadow:
+      0 0 0 4px var(--vinyl),
+      var(--lift-high);
+  }
+}
+
+.bumper:active {
+  transform: scale(0.985);
+  transition-duration: var(--dur-press);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-stretch: 62%;
+  word-spacing: 0.14em;
+  font-weight: 900;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.label svg {
+  flex: none;
+  width: 0.8em;
+  height: 0.8em;
+}
+
+.question {
+  font-size: 1rem;
+  font-weight: 550;
+  line-height: 1.4;
+}
+
+.fact {
+  font-size: 0.9375rem;
+  line-height: 1.35;
+}
+
+.fact strong {
+  font-weight: 800;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--vinyl);
+  font-weight: 700;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.cta svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 960px) {
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .bumper {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'label label'
+      'question question'
+      'fact fact'
+      'cta cta';
+  }
+
+  .label {
+    grid-area: label;
+  }
+
+  .fact {
+    grid-area: fact;
+  }
+
+  .question {
+    grid-area: question;
+  }
+
+  .cta {
+    grid-area: cta;
+    justify-self: start;
+  }
+}

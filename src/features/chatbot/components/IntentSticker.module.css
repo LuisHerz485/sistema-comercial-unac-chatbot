@@ -1,0 +1,57 @@
+.sticker {
+  --tilt: -2deg;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.35em 0.75em 0.35em 0.6em;
+  border-radius: var(--radius-sticker);
+  background: var(--intent);
+  color: var(--on-intent);
+  box-shadow: var(--die-cut), var(--lift);
+  font-family: var(--font-display);
+  font-stretch: 75%;
+  word-spacing: 0.14em;
+  font-weight: 850;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transform: rotate(var(--tilt));
+}
+
+.sticker[data-size='sm'] {
+  font-size: 0.8125rem;
+}
+.sticker[data-size='md'] {
+  font-size: 1rem;
+}
+.sticker[data-size='lg'] {
+  font-size: 1.375rem;
+  padding: 0.3em 0.8em 0.3em 0.6em;
+}
+
+.icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+}
+
+.sticker[data-slap] {
+  animation: slap 460ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slap {
+  0% {
+    opacity: 0;
+    transform: translateY(-14px) scale(1.35) rotate(calc(var(--tilt) - 9deg));
+    box-shadow: var(--die-cut), var(--lift-high);
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(var(--tilt));
+    box-shadow: var(--die-cut), var(--lift);
+  }
+}

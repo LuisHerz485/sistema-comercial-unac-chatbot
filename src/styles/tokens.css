@@ -1,0 +1,68 @@
+:root {
+  /* Lija: el suelo de toda la página */
+  --grip: #0b0b0c;
+  --grip-raised: #17171a;
+  --grip-edge: #2a2a2f;
+  --on-grip: #f2f1ec;
+  --on-grip-muted: #a8a7a2;
+
+  /* Vinilo blanco: stickers neutros (bot, tags, botones) */
+  --vinyl: #f4f3ee;
+  --vinyl-shade: #e3e1d9;
+  --ink: #0b0b0c;
+  --ink-muted: #4a4945;
+
+  /* Ley de paleta: cada color pertenece a UNA categoría y a nada más */
+  --intent-cambio: #f3e03b;
+  --intent-retraso: #ff6b1f;
+  --intent-falla: #ff62a5;
+  --intent-factura: #2f5bff;
+  --on-intent-cambio: #0b0b0c;
+  --on-intent-retraso: #0b0b0c;
+  --on-intent-falla: #0b0b0c;
+  --on-intent-factura: #ffffff;
+
+  --danger: #ff8a7a;
+
+  --font-display: 'Archivo Variable', 'Archivo', sans-serif;
+  --font-body: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --font-mono: 'Martian Mono Variable', ui-monospace, monospace;
+
+  /* Borde troquelado y sombra de sticker despegándose */
+  --die-cut: 0 0 0 3px var(--vinyl);
+  --lift: 0 1px 1px rgb(0 0 0 / 0.35), 0 8px 18px -6px rgb(0 0 0 / 0.6);
+  --lift-high: 0 2px 2px rgb(0 0 0 / 0.35), 0 18px 34px -10px rgb(0 0 0 / 0.7);
+
+  --radius-sticker: 14px;
+  --radius-pill: 999px;
+
+  /* Curvas de movimiento: salidas fuertes, nada de ease-in en UI */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --dur-press: 120ms;
+  --dur-ui: 200ms;
+  --dur-panel: 260ms;
+
+  --gutter: clamp(16px, 4vw, 48px);
+  --max: 1320px;
+
+  /* Grano de lija: ruido SVG */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[data-intent='cambio-oferta'] {
+  --intent: var(--intent-cambio);
+  --on-intent: var(--on-intent-cambio);
+}
+[data-intent='entrega-retrasada'] {
+  --intent: var(--intent-retraso);
+  --on-intent: var(--on-intent-retraso);
+}
+[data-intent='producto-falla'] {
+  --intent: var(--intent-falla);
+  --on-intent: var(--on-intent-falla);
+}
+[data-intent='factura-empresa'] {
+  --intent: var(--intent-factura);
+  --on-intent: var(--on-intent-factura);
+}

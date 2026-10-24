@@ -1,0 +1,89 @@
+.demo {
+  padding: 8px var(--gutter);
+  border-bottom: 1px solid var(--grip-edge);
+  color: var(--on-grip-muted);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 20px var(--gutter);
+}
+
+.logo {
+  display: inline-block;
+  padding: 2px 14px 0;
+  border-radius: 10px;
+  background: var(--vinyl);
+  color: var(--ink);
+  box-shadow: var(--lift);
+  font-family: var(--font-display);
+  font-stretch: 62%;
+  word-spacing: 0.14em;
+  font-weight: 900;
+  font-size: 2.25rem;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transform: rotate(-3deg);
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logo:hover {
+    transform: rotate(-1deg) scale(1.03);
+  }
+}
+
+.nav {
+  display: flex;
+  gap: clamp(16px, 3vw, 36px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-stretch: 75%;
+  word-spacing: 0.14em;
+  font-weight: 750;
+  font-size: 1.0625rem;
+  text-transform: uppercase;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--on-grip-muted);
+  transition: color var(--dur-ui) var(--ease-out);
+}
+
+.nav a:hover {
+  color: var(--on-grip);
+}
+
+.cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--grip-edge);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.cart svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 640px) {
+  .nav {
+    display: none;
+  }
+}
